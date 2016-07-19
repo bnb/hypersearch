@@ -27,7 +27,7 @@ angular.module('npm-plugin-browser')
     var makeRequest = function (start, size) {
       return $http.get('http://npmsearch.com/query', {
         params: {
-          q: ['keywords:gulpfriendly', 'keywords:gulpplugin'],
+          q: ['keywords:hyperterm'],
           fields: fields.join(','),
           start: start,
           size: size,
@@ -87,8 +87,8 @@ angular.module('npm-plugin-browser')
         }
       });
 
-    $scope.orderByGulpKeywords = function (item) {
-      return (item === 'gulpplugin' || item === 'gulpfriendly') ? -1 : 0;
+    $scope.orderByHyperTermKeywords = function (item) {
+      return (item === 'hyperterm') ? -1 : 0;
     };
 
     $scope.notBlacklisted = function (item) {

@@ -1,22 +1,19 @@
 <!doctype html>
 <html ng-app="npm-plugin-browser">
     <head>
-        <title>gulp.js plugin registry</title>
-        <meta name="description" content="Discover gulp.js plugins">
-        <meta name="keywords" content="gulp,plugins,build,plugin,search">
+        <title>HyperTerm Plugin &amp; Theme Registry</title>
+        <meta name="description" content="Discover HyperTerm Plugins and Themes">
+        <meta name="keywords" content="hyperterm,plugins,terminal,plugin,search,electron">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-        <link rel="dns-prefetch" href="//registry.gulpjs.com">
 
         <!-- build:css css/app.css -->
         <link rel="stylesheet" href="css/style.css">
         <!-- endbuild -->
 
-        <link href="//fonts.googleapis.com/css?family=Grand+Hotel|Roboto+Slab:400,300" rel="stylesheet">
-
         <!-- META -->
-        <meta property="og:title" content="gulp.js plugin registry">
-        <meta property="og:url" content="http://gulpjs.com/plugins">
-        <meta property="og:description" content="Discover gulp.js plugins">
+        <meta property="og:title" content="HyperTerm Plugin &amp; Theme Registry">
+        <meta property="og:url" content="http://bnb.github.io/hypersearch">
+        <meta property="og:description" content="Discover HyperTerm Plugins &amp; Themes">
 
         <!-- OpenSearch -->
         <link rel="search" type="application/opensearchdescription+xml" href="./opensearch.xml" />
@@ -24,7 +21,7 @@
 
     <body ng-controller="PluginListCtrl" class="good-font">
         <nav class="fixed-title" role="navigation">
-            <a class="logo" href="http://gulpjs.com/" role="banner">gulp.js</a>
+            <a class="logo" href="http://bnb.github.io/hypersearch" role="banner">HyperTerm Search</a>
             <input ng-change="limit=15" type="search" role="search" class="ng-cloak good-font plugin-search" placeholder="Search {{ (data | filter:notBlacklisted).length }} plugins..." ng-model="search" autofocus>
         </nav>
 
@@ -38,7 +35,7 @@
                     <div class="description" ng-bind="plugin.description"></div>
                     <div class="more-info">
                         <div class="tags">
-                            <a ng-repeat="keyword in plugin.keywords | orderBy:orderByGulpKeywords track by $index"
+                            <a ng-repeat="keyword in plugin.keywords | orderBy:orderByHyperTermKeywords track by $index"
                                ng-href="http://npmsearch.com/?q=keywords:{{keyword}}"
                                target="_blank"
                                ng-bind="keyword"></a>
